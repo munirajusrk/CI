@@ -32,7 +32,7 @@ pipeline {
                 sh '''
                 docker stop c1 || true
                 docker rm c1 || true
-                docker run -d --name c1 -p 8000:8080 muniraju89docker/ci-app:1
+                docker run -d --name c1 -p 9000:8080 muniraju89docker/ci-app:1
                 '''
             }
         }

@@ -11,7 +11,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/rashmigmr13-eng/CI.git'
+                    url: 'https://github.com/munirajusrk/CI.git'
             }
         }
 
@@ -23,7 +23,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t rashmigmr13/ci-app:1 .'
+                sh 'docker build -t muniraju89docker/ci-app:1 .'
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
                 sh '''
                 docker stop c1 || true
                 docker rm c1 || true
-                docker run -d --name c1 -p 9000:8080 rashmigmr13/ci-app:1
+                docker run -d --name c1 -p 9000:8080 muniraju89docker/ci-app:1
                 '''
             }
         }
